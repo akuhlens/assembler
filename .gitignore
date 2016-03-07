@@ -13,6 +13,7 @@
 *.a
 *.la
 *.lo
+*compiled
 
 # Shared objects (inc. Windows DLLs)
 *.dll
@@ -30,3 +31,7 @@
 
 # Debug files
 *.dSYM/
+
+# editor temp files
+\#*
+*~

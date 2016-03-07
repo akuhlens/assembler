@@ -17,6 +17,7 @@
    [(MOV (r/m 64) (r 64))  (REX.W + 89 /r)]
    [(MOV (r 8)    (r/m 8)) (8A /r)]
    [(MOV (r 8)    (r/m 8)) ...]))
+
 =<compile/match>
 (lambda (instr)
  ;; use explicit list structure so that match macro generates better code
@@ -170,11 +171,6 @@
     [(_ pre:instruction-prefix-class op:opcode-class mod:ModR/M-class)
      #'(let ()
          (append pre.compute op.compute mod.compute))]))
-
-(define test1 '(MOV (register 64 RAX) (register 64 RCX)))
-(define test2 '(MOV (register 64 R8)  (register 64 R10)))
-(define test3 '(MOV (register 64 RCX) (register 64 RAX)))
-(define test4 '(FOO (register 64 RBX) (register 64 RBP)))
 
 
 
